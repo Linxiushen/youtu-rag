@@ -581,7 +581,7 @@ class MemoryVectorStore(BaseVectorStore):
                 content=results["documents"][0] if results["documents"] else "",
                 chunk_index=metadata.get("chunk_index", 0),
                 metadata=metadata,
-                embedding=results["embeddings"][0] if results.get("embeddings") else None,
+                embedding=results["embeddings"][0] if results.get("embeddings") is not None else None,
             )
         return None
 
